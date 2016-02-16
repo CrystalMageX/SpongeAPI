@@ -24,8 +24,19 @@
  */
 package org.spongepowered.api.text.template;
 
+/**
+ * Exception thrown when the parameters provided to {@link TextTemplate} are
+ * missing a required parameter.
+ */
 public class RequiredTextTemplateArgumentException extends IllegalArgumentException {
+
+    /**
+     * Creates a new exception for the specified argument name.
+     *
+     * @param argName Name of argument that is missing
+     */
     public RequiredTextTemplateArgumentException(String argName) {
         super("Missing required argument in TextTemplate \"" + argName + "\".");
     }
+
 }

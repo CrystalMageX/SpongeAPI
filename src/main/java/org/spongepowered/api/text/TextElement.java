@@ -35,4 +35,5 @@ public interface TextElement {
      * @param builder to append to
      */
     void appendTo(Text.Builder builder);
+
 }

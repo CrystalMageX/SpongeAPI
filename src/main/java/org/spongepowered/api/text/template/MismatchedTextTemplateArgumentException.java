@@ -24,9 +24,24 @@
  */
 package org.spongepowered.api.text.template;
 
+/**
+ * Exception thrown when a parameter for a {@link TextTemplate} does not match
+ * the expected type of the corresponding argument.
+ */
 public class MismatchedTextTemplateArgumentException extends IllegalArgumentException {
+
+    /**
+     * Creates a new exception with the "expected" argument type and the
+     * "actual" parameter type that was provided for the specified argument
+     * name.
+     *
+     * @param expected Expected type of the argument
+     * @param actual Actual type provided by parameter
+     * @param argName The name of the argument that was mismatched
+     */
     public MismatchedTextTemplateArgumentException(Class<?> expected, Class<?> actual, String argName) {
         super("Mismatched arguments in TextTemplate. Expected " + expected.getName()
                 + " got " + actual.getName() + " for argument \"" + argName + "\".");
     }
+
 }

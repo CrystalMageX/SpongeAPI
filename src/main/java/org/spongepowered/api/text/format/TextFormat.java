@@ -189,4 +189,5 @@ public final class TextFormat implements TextElement {
                 .add("style", style)
                 .toString();
     }
+    
 }
