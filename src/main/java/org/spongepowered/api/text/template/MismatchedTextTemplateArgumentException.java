@@ -24,8 +24,8 @@
  */
 package org.spongepowered.api.text.template;
 
-public class MismatchedTextTemplateArgument extends IllegalArgumentException {
-    public MismatchedTextTemplateArgument(Class<?> expected, Class<?> actual, String argName) {
+public class MismatchedTextTemplateArgumentException extends IllegalArgumentException {
+    public MismatchedTextTemplateArgumentException(Class<?> expected, Class<?> actual, String argName) {
         super("Mismatched arguments in TextTemplate. Expected " + expected.getName()
                 + " got " + actual.getName() + " for argument \"" + argName + "\".");
     }

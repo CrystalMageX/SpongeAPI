@@ -107,7 +107,7 @@ public class TextTemplate {
      * function was provided the argument expects a TextElement type. The
      * parameter value in the provided map in {@link #eval(Map)} must match the
      * type of the input for the arguments Function or a
-     * {@link MismatchedTextTemplateArgument} will be thrown.
+     * {@link MismatchedTextTemplateArgumentException} will be thrown.
      *
      * In the case that an element is any other type, the parameter value's
      * {@link Object#toString()} method will be used to create a {@link Text}
@@ -198,7 +198,7 @@ public class TextTemplate {
         TextElement eval(Object param) {
             Class<?> paramType = param.getClass();
             if (!this.type.isAssignableFrom(paramType)) {
-                throw new MismatchedTextTemplateArgument(this.type, paramType, this.name);
+                throw new MismatchedTextTemplateArgumentException(this.type, paramType, this.name);
             }
             return this.f.apply((T) param);
         }
